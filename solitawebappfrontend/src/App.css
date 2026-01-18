@@ -1,0 +1,165 @@
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  color: white;
+  background: linear-gradient(#8f8f8f, #0f0f0f);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+dialog[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(48, 48, 48);
+  z-index: 1000;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+/*  Mobile-first styles */
+
+/* Make images scale to their container by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Simple responsive photo grid for thumbnails (used by PhotoGrid) */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  padding: 8px;
+}
+.photo-grid button {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Ensure dialog images don't push controls off-screen */
+dialog[open] img {
+  max-height: calc(100vh - 120px);
+  width: auto;
+  max-width: 100%;
+}
+
+/* Mobile small screens */
+@media (max-width: 600px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 3.5em;
+    padding: 0.5em;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  /* Make dialogs full-screen on phones for better UX */
+  dialog[open] {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 1rem;
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  /* Larger tap targets */
+  button,
+  .MuiButton-root {
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    touch-action: manipulation;
+  }
+
+  /* Make grid more compact on very small screens */
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 6px;
+  }
+}
+
+/* Tablet and up adjustments */
+@media (min-width: 601px) and (max-width: 900px) {
+  #root {
+    padding: 1.5rem;
+  }
+  .logo {
+    height: 4.5em;
+  }
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+/* Desktop tweaks */
+@media (min-width: 901px) {
+  #root {
+    padding: 2rem;
+  }
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
